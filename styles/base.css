@@ -1,0 +1,282 @@
+* {
+  /* background: rgba(0, 0, 0, 0.1); */
+  outline: none;
+  transition: backgorund 0.2s, transform 0.2s;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+body {
+  background-color: #3ec1d3;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #fafafa;
+  text-align: center;
+}
+
+input,
+.task-item,
+button,
+textarea,
+.mask {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+input[type='text'],
+input[type='date'],
+button,
+textarea {
+  border: 0;
+}
+
+input[type='text'],
+input[type='date'] {
+  display: block;
+}
+
+.add-task input[type='text'] {
+  float: left;
+  width: 84%;
+  margin-right: 1%;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: inset 0px -2px 2px 0px #eaeaea,
+    /*下边内阴影 x轴偏移量 y轴偏移量 模糊半径 扩散半径 阴影颜色*/ inset -2px 0px
+      2px 0px #eaeaea,
+    /*右边内阴影 */ inset 2px 0px 1px 0px rgba(32, 33, 36, 0.28),
+    /*左边内阴影 */ inset 0px 2px 1px 0px rgba(32, 33, 36, 0.28);
+  /*上边内阴影 */
+}
+
+input[type='date']:focus,
+input[type='date']:hover {
+  background: #e3fdfd;
+}
+
+/* .add-task{
+    position: relative;
+} */
+
+.add-task button[type='submit'] {
+  float: left;
+  width: 15%;
+}
+
+.add-task button,
+.task-item {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+button {
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #2d4059;
+  background: #ffffd2;
+}
+
+button:hover {
+  background: #ffff9d;
+}
+
+.add-task button:active,
+.remind button:active {
+  transform: translate(0, 1px);
+  box-shadow: inset 2px 2px 2px rgba(32, 33, 36, 0.28);
+}
+
+.add-task,
+.task-list {
+  margin: 5px 0;
+}
+
+.task-item {
+  background: #fff;
+  color: #2d4059;
+  border: 1px solid #dfe1e5;
+  margin-bottom: 5px;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.task-item:hover {
+  background: #ffffd2;
+}
+
+.task-item.completed {
+  color: #aaa;
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.task-item.completed:after {
+  content: '';
+  float: right;
+  position: relative;
+  width: 97%;
+  height: 1px;
+  background-color: #aaa;
+  top: -8px;
+}
+
+.fr {
+  float: right;
+}
+
+.fr span {
+  color: #5f6774;
+  font-size: 90%;
+}
+
+.fr span:hover {
+  color: #2b3546;
+}
+
+.todo_txt {
+  margin-left: 10px;
+}
+
+.task-detail,
+.mask {
+  position: fixed;
+  display: none;
+}
+
+.task-detail {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  min-width: 420px;
+  background: #fff;
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.remind,
+.remind input {
+  margin: 10px 0;
+}
+.task-detail input[type='date'] {
+  width: 90%;
+  background: #ffffd2;
+}
+.task-detail [type='date']:focus,
+.task-detail [type='date']:hover {
+  background: #ffff9d;
+}
+
+.task-detail .content {
+  color: #2d4059;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+
+/* .task-detail>* {
+    margin-bottom: 10px;
+}  */
+
+.task-detail [type='text'] {
+  display: block;
+  width: 90%;
+  background: #f6f6f6;
+  color: #2d4059;
+  font-weight: bold;
+  box-shadow: inset 0px -2px 1px 0px #eaeaea, inset -2px 0px 1px 0px #eaeaea,
+    inset 1px 0px 1px 0px rgba(32, 33, 36, 0.28),
+    inset 0px 1px 1px 0px rgba(32, 33, 36, 0.28);
+  margin-bottom: 10px;
+}
+
+.task-detail .datetime {
+  width: 69%;
+}
+
+textarea {
+  display: block;
+  color: #2d4059;
+  font-weight: bold;
+  width: 90%;
+  min-height: 100px;
+  background: #f6f6f6;
+  box-shadow: inset 0px -2px 1px 0px #eaeaea, inset -2px 0px 1px 0px #eaeaea,
+    inset 1px 0px 1px 0px rgba(32, 33, 36, 0.28),
+    inset 0px 1px 1px 0px rgba(32, 33, 36, 0.28);
+}
+
+textarea:hover {
+  background: #efefef;
+}
+
+.remind label {
+  color: #2d4059;
+  font-weight: bold;
+}
+
+.mask {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.msg {
+  display: none;
+  text-align: center;
+  color: #2d4059;
+  background-color: #ffb270;
+  padding: 10px;
+}
+.confirmed {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #ffffd2;
+}
+
+.confirmed:hover {
+  background: #ffff9d;
+}
+
+.bell {
+  width: 0;
+  height: 0;
+}

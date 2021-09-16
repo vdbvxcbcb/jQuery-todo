@@ -1,0 +1,16 @@
+{
+  "name": "jquery-todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery-datetimepicker": "^2.5.21",
+    "store": "^2.0.12"
+  },
+  "devDependencies": {},
+  "description": ""
+}
